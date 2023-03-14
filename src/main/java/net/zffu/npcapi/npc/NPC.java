@@ -40,8 +40,7 @@ public abstract class NPC extends Reflections {
 
     private NPCRegistry registry;
 
-    public NPC(NPCRegistry registry, int id, String idName, String name) {
-        this.registry = registry;
+    public NPC(int id, String idName, String name) {
         this.idName = idName;
         this.name = name;
         this.id = id;
@@ -50,6 +49,10 @@ public abstract class NPC extends Reflections {
     }
 
     public abstract void onClick(PlayerClickNPCEvent event);
+
+    public void setRegistry(NPCRegistry registry) {
+        this.registry = registry;
+    }
 
     public void create() {
         PacketPlayOutNamedEntitySpawn packet = new PacketPlayOutNamedEntitySpawn();

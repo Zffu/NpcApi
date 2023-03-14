@@ -24,6 +24,7 @@ public class NPCRegistry {
     }
 
     public boolean register(NPC npc) {
+        this.add(npc.getIdName(), npc);
         return true;
     }
 
@@ -32,6 +33,7 @@ public class NPCRegistry {
     }
 
     public boolean add(String id, NPC npc) {
+        npc.setRegistry(this);
         this.npcRegistry.put(id, npc);
         return true;
     }
